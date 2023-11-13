@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -11,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import uz.jasurbekruzimov.firstcompose.ui.theme.FirstComposeTheme
@@ -26,7 +29,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Pink80
                 ) {
-                    Greeting("Android")
                 }
             }
         }
@@ -34,22 +36,27 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        fontSize = 27.sp
-    )
-    Text(
-        text = "Hello $name!",
-        fontSize = 27.sp
-    )
+fun Greeting(
+    message: String,
+    signature: String
+) {
+    Column(
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = message,
+            fontSize = 50.sp,
+            lineHeight = 58.sp,
+            textAlign = TextAlign.Center
+        )
 
+    }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     FirstComposeTheme {
-        Greeting("Android")
+        Greeting(message = "Assalomu Alaykum !", signature = "A1pms.uz")
     }
 }
