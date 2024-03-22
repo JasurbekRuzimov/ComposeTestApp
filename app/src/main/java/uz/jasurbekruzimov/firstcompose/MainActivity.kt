@@ -57,6 +57,6 @@ fun Greeting(
 @Composable
 fun GreetingPreview() {
     FirstComposeTheme {
-        Greeting(message = "Assalomu Alaykum !", signature = "A1pms.uz")
+        Greeting(message = "Assalomu Alaykum !", signature = "Jasurbek Dev")
     }
 }
